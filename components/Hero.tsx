@@ -462,27 +462,25 @@ export function HeroModel(props: JSX.IntrinsicElements["group"]) {
             material={materials.hole}
           />
         </group>
-        <group>
-          <mesh
-            castShadow
-            receiveShadow
-            geometry={nodes.Plane.geometry}
-            material={
-              new THREE.MeshBasicMaterial({
-                map: videoTexture,
-                side: THREE.DoubleSide,
-                transparent: true,
-                color: "#37f713",
-                opacity: 0.3,
-              })
-            }
-            position={[-0.043, 1.051, 0.653]}
-            rotation={[-3.142, 1.555, 1.571]}
-            scale={[0.169, 0.221, 0.263]}
-            ref={screen}
-          />
-          <pointLight color="white" intensity={15} position={[0, 0, 0]} />
-        </group>
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Plane.geometry}
+          material={
+            new THREE.MeshBasicMaterial({
+              map: videoTexture,
+              side: THREE.DoubleSide,
+              transparent: true,
+              color: "#37f713",
+              opacity: 0.3,
+            })
+          }
+          position={[-0.043, 1.051, 0.653]}
+          rotation={[-3.142, 1.555, 1.571]}
+          scale={[0.169, 0.221, 0.263]}
+          ref={screen}
+        />
+
         <group
           position={[-0.043, 0.748, -0.245]}
           rotation={[1.605, 0, 0]}

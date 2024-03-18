@@ -22,7 +22,7 @@ export const HeroExperience = () => {
 
   return (
     <>
-      <ambientLight intensity={2.5} />
+      <ambientLight intensity={3} />
       <directionalLight
         intensity={3}
         position={[-5, 5, 5]}

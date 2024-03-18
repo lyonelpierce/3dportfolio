@@ -15,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`dark:bg-[#1f1f1f] dark:text-white h-screen ${GeistSans.className}`}
+        className={`dark:bg-[#1f1f1f] dark:text-white h-screen tracking-wide ${GeistSans.className}`}
       >
         {children}
       </body>

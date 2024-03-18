@@ -14,7 +14,7 @@ import { TooltipArrow } from "@radix-ui/react-tooltip";
 
 const LandingSocial = () => {
   return (
-    <div className="fixed bottom-0 left-0 p-8 flex flex-col gap-4 justify-center items-center text-[#9e9e9e]">
+    <div className="hidden fixed bottom-0 left-0 p-8 md:flex flex-col gap-4 justify-center items-center text-[#9e9e9e]">
       <TooltipProvider>
         <Tooltip>
           <TooltipTrigger>
