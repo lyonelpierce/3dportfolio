@@ -18,7 +18,7 @@ const LandingHero = () => {
         <Button
           variant="outline"
           size="sm"
-          className="mx-auto md:mx-0 w-[180px] uppercase font-bold text-base py-6 text-[#f66e4c] hover:text-[#303030]"
+          className="mx-auto md:mx-0 w-[180px] uppercase font-bold text-base py-6 text-[#f66e4c]"
         >
           Get in touch
         </Button>
