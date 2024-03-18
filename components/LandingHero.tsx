@@ -12,12 +12,13 @@ const LandingHero = () => {
         <h1 className="md:text-left text-center font-bold text-3xl md:text-5xl whitespace-nowrap">
           Lyonel Pierce
         </h1>
-        <span className="font-medium md:whitespace-nowrap">
+        <span className="text-center md:text-left font-medium md:whitespace-nowrap">
           Full Stack Developer | Web Designer | Graphic Designer
         </span>
         <Button
           variant="outline"
-          className="mx-auto md:mx-0 w-1/2 uppercase font-bold text-base py-6 text-[#f66e4c] hover:text-[#303030]"
+          size="sm"
+          className="mx-auto md:mx-0 w-[180px] uppercase font-bold text-base py-6 text-[#f66e4c] hover:text-[#303030]"
         >
           Get in touch
         </Button>
