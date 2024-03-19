@@ -7,7 +7,7 @@ import { HeroExperience } from "@/components/HeroExperience";
 
 const LandingHero = () => {
   return (
-    <div className="flex flex-col-reverse md:flex-row items-center h-dvh w-full justify-center">
+    <div className="flex flex-col-reverse md:flex-row items-center h-dvh w-full justify-center z-10">
       <div className="flex flex-col gap-5 md:w-1/3">
         <h1 className="md:text-left text-center font-bold text-3xl md:text-5xl whitespace-nowrap">
           Lyonel Pierce

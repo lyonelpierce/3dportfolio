@@ -28,7 +28,7 @@ const LandingSocial = () => {
             className="font-semibold p-2"
           >
             Github
-            <TooltipArrow width={11} height={5} className="fill-[#f66e4c]" />
+            <TooltipArrow width={11} height={5} className="fill-[#e8570c]" />
           </TooltipContent>
         </Tooltip>
         <Tooltip>
@@ -46,7 +46,7 @@ const LandingSocial = () => {
             className="font-semibold p-2"
           >
             LinkedIn
-            <TooltipArrow width={11} height={5} className="fill-[#f66e4c]" />
+            <TooltipArrow width={11} height={5} className="fill-[#e8570c]" />
           </TooltipContent>
         </Tooltip>
       </TooltipProvider>

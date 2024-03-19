@@ -11,7 +11,6 @@ export default function Home() {
       <LandingHero />
       <LandingCards />
       {/*
-     
       <LandingAbout />
       <LandingSkills />
       <LandingExperience />
