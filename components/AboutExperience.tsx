@@ -5,9 +5,9 @@ import { AboutModel } from "@/components/About";
 export const AboutExperience = () => {
   return (
     <>
-      <ambientLight intensity={0.5} />
+      <ambientLight intensity={0.1} />
       <directionalLight
-        intensity={0.5}
+        intensity={0.1}
         position={[55, 15, 40]}
         castShadow
         shadow-mapSize={2048}
@@ -22,12 +22,12 @@ export const AboutExperience = () => {
         azimuth={[-Math.PI / 1.4, Math.PI / 2]}
       >
         <AboutModel
-          scale={2.3}
+          scale={2.1}
           position={[0, -2.5, 0]}
           rotation={[0, -10.4, 0]}
         />
       </PresentationControls>
-      <Environment preset="lobby" />
+      <Environment preset="apartment" />
     </>
   );
 };

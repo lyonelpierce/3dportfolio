@@ -60,20 +60,20 @@ export function AboutModel(props: JSX.IntrinsicElements["group"]) {
   useCursor(hovered);
 
   const glass = new THREE.MeshStandardMaterial({
-    color: "#30d5c8",
+    color: "#666",
     metalness: 0.5,
     roughness: 0.5,
     transparent: true,
-    opacity: 0.15,
+    opacity: 0.3,
     side: THREE.DoubleSide,
   });
 
   const water = new THREE.MeshStandardMaterial({
-    color: "#30d5c8",
+    color: "#0FB9AC",
     metalness: 0.5,
     roughness: 0.5,
     transparent: true,
-    opacity: 0.4,
+    opacity: 0.5,
     side: THREE.DoubleSide,
   });
 

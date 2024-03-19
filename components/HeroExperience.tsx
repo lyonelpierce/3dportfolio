@@ -1,9 +1,6 @@
 import { useState, useEffect } from "react";
-import {
-  Environment,
-  OrbitControls,
-  PresentationControls,
-} from "@react-three/drei";
+import { Environment, PresentationControls } from "@react-three/drei";
+
 import { HeroModel } from "./Hero";
 
 export const HeroExperience = () => {
@@ -28,7 +25,7 @@ export const HeroExperience = () => {
     <>
       <ambientLight intensity={0.5} />
       <directionalLight
-        intensity={2}
+        intensity={0.5}
         position={[-5, 5, 5]}
         castShadow
         shadow-mapSize={2048}
