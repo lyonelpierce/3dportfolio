@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+
 import { Canvas } from "@react-three/fiber";
 import { Button } from "@/components/ui/button";
 import { HeroExperience } from "@/components/HeroExperience";
