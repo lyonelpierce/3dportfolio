@@ -60,9 +60,11 @@ const LandingAbout = () => {
               communications, version control, and project management.
             </p>
             <div className="flex gap-5 md:flex-row flex-col mt-8">
-              <Button className="bg-[#f66e4c] text-base py-6 px-5 rounded-lg font-bold uppercase text-white hover:bg-white hover:text-orange-600">
-                Hire Me
-              </Button>
+              <Link href="#contact">
+                <Button className="bg-[#f66e4c] text-base py-6 px-5 rounded-lg font-bold uppercase text-white hover:bg-white hover:text-orange-600">
+                  Hire Me
+                </Button>
+              </Link>
               <Link href="/assets/RESUME.pdf" target="_blank">
                 <Button
                   className="w-full py-6 text-base uppercase font-bold border-0 ring-1 ring-white ring-inset hover:bg-white hover:text-[#303030]"

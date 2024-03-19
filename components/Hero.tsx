@@ -1,6 +1,6 @@
 import * as THREE from "three";
 import React, { useEffect, useRef, useState } from "react";
-import { useAnimations, useFBX, useGLTF } from "@react-three/drei";
+import { useAnimations, useCursor, useFBX, useGLTF } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
 
 type GLTFResult = GLTF & {
@@ -144,11 +144,14 @@ export function HeroModel(props: JSX.IntrinsicElements["group"]) {
   const [videoTexture, setVideoTexture] = useState<THREE.VideoTexture | null>(
     null
   );
+  const [hovered, setHover] = useState(false);
+
+  const { nodes, materials } = useGLTF("/models/hero.glb") as GLTFResult;
+
+  useCursor(hovered);
 
   const avatar = useRef<THREE.Group>(null);
   const screen = useRef<THREE.Mesh>(null);
-
-  const { nodes, materials } = useGLTF("/models/hero.glb") as GLTFResult;
 
   const { animations: typingAnimation } = useFBX("/models/typingAnimation.fbx");
   typingAnimation[0].name = "Typing";
@@ -178,7 +181,12 @@ export function HeroModel(props: JSX.IntrinsicElements["group"]) {
   }, []);
 
   return (
-    <group {...props} dispose={null}>
+    <group
+      {...props}
+      dispose={null}
+      onPointerOver={() => setHover(true)}
+      onPointerOut={() => setHover(false)}
+    >
       <group
         position={[0.022, 0.679, 0.661]}
         rotation={[Math.PI, 0, Math.PI]}

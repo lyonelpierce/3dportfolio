@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { OrbitControls } from "@react-three/drei";
+import { OrbitControls, PresentationControls } from "@react-three/drei";
 import { HeroModel } from "./Hero";
 
 export const HeroExperience = () => {
@@ -30,8 +30,16 @@ export const HeroExperience = () => {
         shadow-mapSize={2048}
         shadow-bias={-0.0001}
       />
-      <OrbitControls enableZoom={false} enablePan={false} />
-      <HeroModel scale={heroScale} position={[0.3, -1.7, 0]} />
+      <PresentationControls
+        global
+        config={{ mass: 2, tension: 500 }}
+        snap={{ mass: 4, tension: 1500 }}
+        rotation={[0, 0, 0]}
+        polar={[-Math.PI / 3, Math.PI / 3]}
+        azimuth={[-Math.PI / 1.4, Math.PI / 2]}
+      >
+        <HeroModel scale={heroScale} position={[0.3, -1.7, 0]} />
+      </PresentationControls>
     </>
   );
 };

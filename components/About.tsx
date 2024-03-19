@@ -51,8 +51,11 @@ type GLTFResult = GLTF & {
 
 export function AboutModel(props: JSX.IntrinsicElements["group"]) {
   const { nodes, materials } = useGLTF("/models/about.glb") as GLTFResult;
+
   const headRef = useRef<THREE.Group>(null);
   const [hovered, setHovered] = useState<boolean>(false);
+  const [mouseX, setMouseX] = useState<number>(0);
+  const [mouseY, setMouseY] = useState<number>(0);
 
   useCursor(hovered);
 
@@ -62,15 +65,48 @@ export function AboutModel(props: JSX.IntrinsicElements["group"]) {
     roughness: 0.5,
     transparent: true,
     opacity: 0.2,
+    side: THREE.DoubleSide,
   });
+
+  const water = new THREE.MeshStandardMaterial({
+    color: "#30d5c8",
+    metalness: 0.5,
+    roughness: 0.5,
+    transparent: true,
+    opacity: 0.4,
+    side: THREE.DoubleSide,
+  });
+
+  useEffect(() => {
+    const handleMouseMove = (event: any) => {
+      const mouseX = event.clientX;
+      const windowWidth = window.innerWidth;
+
+      const mouseY = event.clientY;
+      const windowHeight = window.innerHeight;
+
+      const normalizedMouseX = (mouseX / windowWidth) * 2 - 1;
+      const normalizedMouseY = (mouseY / windowHeight) * 2 - 1;
+
+      setMouseX(normalizedMouseX);
+      setMouseY(normalizedMouseY);
+    };
+
+    document.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      document.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
 
   useFrame((state, delta) => {
     easing.dampE(
       headRef.current!.rotation,
-      [0, state.pointer.x * (state.camera.position.z > 1 ? 1 : -1), 0],
+      [0, mouseX * (state.camera.position.z > 1 ? 1 : -1), 0],
       0.4,
       delta
     );
+    easing.dampE(headRef.current!.rotation, [0, 0, mouseY * 0.2], 0.4, delta);
   });
 
   return (
@@ -83,20 +119,14 @@ export function AboutModel(props: JSX.IntrinsicElements["group"]) {
       <mesh
         castShadow
         receiveShadow
-        geometry={nodes.Torus.geometry}
-        material={materials["Material.001"]}
-      />
-      <mesh
-        castShadow
-        receiveShadow
         geometry={nodes.Cylinder001.geometry}
-        material={materials["Glass.001"]}
+        material={water}
       />
       <mesh
         castShadow
         receiveShadow
         geometry={nodes.Cylinder002.geometry}
-        material={materials["Glass.001"]}
+        material={water}
       />
       <mesh
         castShadow
@@ -183,6 +213,12 @@ export function AboutModel(props: JSX.IntrinsicElements["group"]) {
         material={materials["Material.033"]}
       />
       <group ref={headRef}>
+        <mesh
+          castShadow
+          receiveShadow
+          geometry={nodes.Torus.geometry}
+          material={materials["Material.001"]}
+        />
         <mesh
           name="Wolf3D_Teeth"
           castShadow

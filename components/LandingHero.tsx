@@ -37,7 +37,6 @@ const LandingHero = () => {
             shadows
             gl={{ antialias: true }}
             camera={{ position: [5, 2, 11], fov: 35 }}
-            className="cursor-pointer"
           >
             <HeroExperience />
           </Canvas>
