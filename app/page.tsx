@@ -3,6 +3,7 @@ import LandingCards from "@/components/LandingCards";
 import LandingSocial from "@/components/LandingSocial";
 import LandingScroll from "@/components/LandingScroll";
 import LandingAbout from "@/components/LandingAbout";
+import LandingSkills from "@/components/LandingSkills";
 
 export default function Home() {
   return (
@@ -12,8 +13,8 @@ export default function Home() {
       <LandingHero />
       <LandingCards />
       <LandingAbout />
-      {/*
       <LandingSkills />
+      {/*
       <LandingExperience />
       <LandingPortfolio /> */}
     </main>

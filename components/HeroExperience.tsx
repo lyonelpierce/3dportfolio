@@ -1,5 +1,9 @@
 import { useState, useEffect } from "react";
-import { OrbitControls, PresentationControls } from "@react-three/drei";
+import {
+  Environment,
+  OrbitControls,
+  PresentationControls,
+} from "@react-three/drei";
 import { HeroModel } from "./Hero";
 
 export const HeroExperience = () => {
@@ -22,9 +26,9 @@ export const HeroExperience = () => {
 
   return (
     <>
-      <ambientLight intensity={3} />
+      <ambientLight intensity={0.5} />
       <directionalLight
-        intensity={3}
+        intensity={2}
         position={[-5, 5, 5]}
         castShadow
         shadow-mapSize={2048}
@@ -40,6 +44,7 @@ export const HeroExperience = () => {
       >
         <HeroModel scale={heroScale} position={[0.3, -1.7, 0]} />
       </PresentationControls>
+      <Environment preset="apartment" />
     </>
   );
 };

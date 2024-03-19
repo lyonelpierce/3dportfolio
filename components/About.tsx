@@ -64,7 +64,7 @@ export function AboutModel(props: JSX.IntrinsicElements["group"]) {
     metalness: 0.5,
     roughness: 0.5,
     transparent: true,
-    opacity: 0.2,
+    opacity: 0.15,
     side: THREE.DoubleSide,
   });
 

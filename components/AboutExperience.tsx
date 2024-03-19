@@ -1,12 +1,13 @@
-import { OrbitControls, PresentationControls } from "@react-three/drei";
+import { Environment, PresentationControls } from "@react-three/drei";
+
 import { AboutModel } from "@/components/About";
 
 export const AboutExperience = () => {
   return (
     <>
-      <ambientLight intensity={2} />
+      <ambientLight intensity={0.5} />
       <directionalLight
-        intensity={2}
+        intensity={0.5}
         position={[55, 15, 40]}
         castShadow
         shadow-mapSize={2048}
@@ -26,6 +27,7 @@ export const AboutExperience = () => {
           rotation={[0, -10.4, 0]}
         />
       </PresentationControls>
+      <Environment preset="lobby" />
     </>
   );
 };
